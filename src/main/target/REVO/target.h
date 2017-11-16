@@ -279,3 +279,30 @@
 #define USABLE_TIMER_CHANNEL_COUNT 12
 #define USED_TIMERS             ( TIM_N(2) | TIM_N(3) | TIM_N(5) | TIM_N(8) | TIM_N(12) )
 #endif
+
+
+
+#undef USE_SERIALRX_CRSF       // Team Black Sheep Crossfire protocol
+#undef USE_SERIALRX_SUMD       // Graupner Hott protocol
+#undef USE_SERIALRX_SUMH       // Graupner legacy protocol
+#undef USE_SERIALRX_XBUS       // JR
+#undef LED_STRIP
+#undef BARO
+#undef SONAR
+#undef MAG
+#undef USE_NAV
+#undef GPS
+#undef USE_SERVOS
+#undef BLACKBOX
+#undef OSD
+#undef CMS
+#undef USE_OSD_SLAVE
+#undef TRANSPONDER
+#undef VTX_COMMON
+#undef VTX_SETTINGS_CONFIG
+#undef TELEMETRY
+#undef USE_I2C
+#undef USE_DSHOT
+#undef FURYF3OSD
+
+
