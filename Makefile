@@ -112,7 +112,8 @@ LD_FLAGS         :=
 # Default Tool options - can be overridden in {mcu}.mk files.
 #
 ifeq ($(DEBUG),GDB)
-OPTIMISE_DEFAULT      := -Og
+OPTIMISE_DEFAULT      := -Os
+#OPTIMISE_DEFAULT      := -Og
 
 LTO_FLAGS             := $(OPTIMISE_DEFAULT)
 DEBUG_FLAGS            = -ggdb3 -DDEBUG
@@ -274,7 +275,7 @@ $(TARGET_LST): $(TARGET_ELF)
 	$(V0) $(OBJDUMP) -S --disassemble $< > $@
 
 $(TARGET_HEX): $(TARGET_ELF)
-	$(V0) $(OBJCOPY) -O ihex --set-start 0x8000000 $< $@
+	$(V0) $(OBJCOPY) -O ihex --set-start 0x8070000 $< $@
 
 $(TARGET_BIN): $(TARGET_ELF)
 	$(V0) $(OBJCOPY) -O binary $< $@
