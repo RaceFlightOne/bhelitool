@@ -236,7 +236,9 @@ static bool writeSettingsToEEPROM(void)
 
 void writeConfigToEEPROM(void)
 {
+    
     bool success = false;
+    return;
     // write it
     for (int attempt = 0; attempt < 3 && !success; attempt++) {
         if (writeSettingsToEEPROM()) {
