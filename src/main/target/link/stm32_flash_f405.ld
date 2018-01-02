@@ -19,12 +19,13 @@ ENTRY(Reset_Handler)
 0x08008000 to 0x080FFFFF  992K firmware,
 */
 
-/* Specify the memory areas */
+/* Specify the memory areas  */
+/*0x08000000 normally this adress is used */
 MEMORY
 {
-    FLASH (rx)        : ORIGIN = 0x08000000, LENGTH = 16K
-    FLASH_CONFIG (r)  : ORIGIN = 0x08004000, LENGTH = 16K
-    FLASH1 (rx)       : ORIGIN = 0x08008000, LENGTH = 992K
+    FLASH (rx)        : ORIGIN = 0x08070000, LENGTH = 16K  
+    FLASH_CONFIG (r)  : ORIGIN = 0x08074000, LENGTH = 16K
+    FLASH1 (rx)       : ORIGIN = 0x08078000, LENGTH = 992K
 
     RAM (rwx)         : ORIGIN = 0x20000000, LENGTH = 128K
     CCM (rwx)         : ORIGIN = 0x10000000, LENGTH = 64K
