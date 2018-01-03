@@ -20,7 +20,28 @@ ENTRY(Reset_Handler)
 */
 
 /* Specify the memory areas  */
-/*0x08000000 normally this adress is used */
+/*direct boot no BL */
+MEMORY
+{
+    FLASH (rx)        : ORIGIN = 0x08070000, LENGTH = 192K
+    FLASH_CONFIG (r)  : ORIGIN = 0x0802EE00, LENGTH = 128K
+
+    RAM (rwx)         : ORIGIN = 0x20000000, LENGTH = 128K
+    CCM (rwx)         : ORIGIN = 0x10000000, LENGTH = 64K
+    BACKUP_SRAM (rwx) : ORIGIN = 0x40024000, LENGTH = 4K
+    MEMORY_B1 (rx)    : ORIGIN = 0x60000000, LENGTH = 0K
+}
+
+
+
+
+
+
+
+
+
+/*for use with BL */
+/*
 MEMORY
 {
     FLASH (rx)        : ORIGIN = 0x08070000, LENGTH = 16K  
@@ -32,7 +53,8 @@ MEMORY
     BACKUP_SRAM (rwx) : ORIGIN = 0x40024000, LENGTH = 4K
     MEMORY_B1 (rx)    : ORIGIN = 0x60000000, LENGTH = 0K
 }
+*/
 
 REGION_ALIAS("STACKRAM", CCM)
 
-INCLUDE "stm32_flash_split.ld"
+INCLUDE "stm32_flash.ld"
