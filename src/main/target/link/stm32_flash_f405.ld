@@ -23,8 +23,8 @@ ENTRY(Reset_Handler)
 /*direct boot no BL */
 MEMORY
 {
-    FLASH (rx)        : ORIGIN = 0x08070000, LENGTH = 192K
-    FLASH_CONFIG (r)  : ORIGIN = 0x0802EE00, LENGTH = 128K
+    FLASH (rx)        : ORIGIN = 0x08070000, LENGTH = 256K
+    FLASH_CONFIG (r)  : ORIGIN = 0x080B0000, LENGTH = 16K
 
     RAM (rwx)         : ORIGIN = 0x20000000, LENGTH = 128K
     CCM (rwx)         : ORIGIN = 0x10000000, LENGTH = 64K

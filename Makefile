@@ -157,7 +157,7 @@ ifeq ($(OPBL),yes)
 TARGET_FLAGS := -DOPBL $(TARGET_FLAGS)
 .DEFAULT_GOAL := binary
 else
-.DEFAULT_GOAL := hex
+.DEFAULT_GOAL := binary #was hex
 endif
 
 INCLUDE_DIRS    := $(INCLUDE_DIRS) \
@@ -275,7 +275,7 @@ $(TARGET_LST): $(TARGET_ELF)
 	$(V0) $(OBJDUMP) -S --disassemble $< > $@
 
 $(TARGET_HEX): $(TARGET_ELF)
-	$(V0) $(OBJCOPY) -O ihex --set-start 0x8070000 $< $@
+	$(V0) $(OBJCOPY) -O ihex --set-start 0x8000000 $< $@
 
 $(TARGET_BIN): $(TARGET_ELF)
 	$(V0) $(OBJCOPY) -O binary $< $@
